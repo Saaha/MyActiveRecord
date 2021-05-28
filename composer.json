@@ -1,0 +1,20 @@
+{
+    "name": "sahaa/myactiverecord",
+    "description": "Legacy MyActiveRecord packaged as composer dependency",
+    "type": "library",
+    "keywords": ["activerecord", "orm", "mysql"],
+    "authors": [
+        {
+            "name": "Jake Grimley",
+            "email": "jake.grimley@mademedia.co.uk"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "classmap": [
+            "MyActiveRecord.class.php"
+        ]
+    }
+}

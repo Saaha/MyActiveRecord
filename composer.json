@@ -1,5 +1,5 @@
 {
-    "name": "sahaa/myactiverecord",
+    "name": "saha/myactiverecord",
     "description": "Legacy MyActiveRecord packaged as composer dependency",
     "type": "library",
     "keywords": ["activerecord", "orm", "mysql"],

@@ -166,7 +166,11 @@ class MyActiveRecord
 		$args = func_get_args();
 		$rawsql = array_shift($args);
 		if( get_magic_quotes_gpc() ) $args = array_map( 'stripslashes', $args );
-		$args = array_map( version_compare(PHP_VERSION, '5.4', '<') ? 'mysql_escape_string' : 'mysql_real_escape_string', $args );
+		$function = version_compare(PHP_VERSION, '5.4', '<') ? 'mysql_escape_string' : 'mysql_real_escape_string'; 
+		$args = array_map(function($value) use ($function) {
+			return $function($value, MyActiveRecord::Connection());
+		}, $args);
+
 		$sql = vsprintf($rawsql, $args);
 		return $sql;
 	}
